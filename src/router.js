@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Axios from "./views/Axios.vue";
 import Login from "./views/Login.vue";
 import City from "./views/City.vue";
+import Countries from "./views/Countries.vue";
 import axios from "axios";
 
 Vue.use(Router);
@@ -47,6 +48,11 @@ const router = new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
+    },
+    {
+      path: "/countries",
+      name: "Countries",
+      component: Countries
     }
   ]
 });
