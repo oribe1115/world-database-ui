@@ -13,7 +13,6 @@ export default {
   name: "Login",
   data() {
     return {
-      serverlink: "https://enghzvca8cgzt.x.pipedream.net/",
       userName: "",
       password: ""
     };
@@ -25,7 +24,7 @@ export default {
           username: this.userName,
           password: this.password
         };
-        axios.post(this.serverlink, loginData);
+        axios.post("/api/login", loginData);
       }
     }
   }

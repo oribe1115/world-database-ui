@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Axios from "./views/Axios.vue";
 import Login from "./views/Login.vue";
+import City from "./views/City.vue";
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: "/login",
       name: "login",
       component: Login
+    },
+    {
+      path: "/city/:cityName",
+      name: "City",
+      component: City
     },
     {
       path: "/about",
