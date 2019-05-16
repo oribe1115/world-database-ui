@@ -4,10 +4,11 @@ import Home from "./views/Home.vue";
 import Axios from "./views/Axios.vue";
 import Login from "./views/Login.vue";
 import City from "./views/City.vue";
+import axios from "axios";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: "/",
@@ -40,3 +41,17 @@ export default new Router({
     }
   ]
 });
+
+router.beforeEach(async (to, from, next) => {
+  try {
+    await axios.get("/api/whoami");
+  } catch (_) {
+    if (to.path === "/login") {
+      return next(true);
+    }
+    return next("/login");
+  }
+  next(true);
+});
+
+export default router;
