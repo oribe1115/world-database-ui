@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div v-if="allCountriesNameJSON">{{ allCountriesNameJSON }}</div>
+    <div v-if="allCountriesName">
+      <div v-for="country in allCountriesName" :key="country.Name">
+        <p>{{ country.name }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,13 +15,12 @@ export default {
   name: "Countries",
   data() {
     return {
-      allCountriesNameJSON: null,
-      allCountriesName: []
+      allCountriesName: null
     };
   },
   mounted() {
     axios.get("api/countries").then(res => {
-      this.allCountriesNameJSON = res.data;
+      this.allCountriesName = res.data;
     });
   }
 };
