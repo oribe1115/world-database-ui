@@ -5,6 +5,7 @@ import Axios from "./views/Axios.vue";
 import Login from "./views/Login.vue";
 import City from "./views/City.vue";
 import Countries from "./views/Countries.vue";
+import Cities from "./views/Cities.vue";
 import axios from "axios";
 
 Vue.use(Router);
@@ -53,6 +54,11 @@ const router = new Router({
       path: "/countries",
       name: "Countries",
       component: Countries
+    },
+    {
+      path: "/:countryCode/cities",
+      name: "Cities",
+      component: Cities
     }
   ]
 });

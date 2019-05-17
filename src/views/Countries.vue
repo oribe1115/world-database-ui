@@ -2,7 +2,7 @@
   <div>
     <div v-if="allCountriesName">
       <div v-for="country in allCountriesName" :key="country.Name">
-        <p>{{ country.name }}</p>
+        <p>{{ country.name }}:{{ country.code }}</p>
       </div>
     </div>
   </div>
