@@ -1,13 +1,18 @@
 <template>
   <div>
     <div class="dropdown-list">
-      <div
-        class="list-item list-all"
-        @click="changeShowRegionList(), changeRegionToAll()"
-      >
-        ALL
+      <div class="triangle" @click="changeShowRegionList()">
+        <div v-if="showRegionList">
+          <font-awesome-icon icon="caret-up" />
+        </div>
+        <div v-else>
+          <font-awesome-icon icon="caret-down" />
+        </div>
       </div>
       <div v-if="showRegionList">
+        <div class="list-item list-all" @click="changeRegionToAll()">
+          ALL
+        </div>
         <div v-for="region in regionList" :key="region.region">
           <div class="list-item" @click="changeShowRegion(region)">
             {{ region.region }}
