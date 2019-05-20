@@ -1,18 +1,20 @@
 <template>
   <div>
-    <ul>
-      <li @click="show">ALL</li>
+    <div class="dropdown-list">
+      <div class="list-item list-all" @click="show()">ALL</div>
       <div v-if="showRegion">
         <div v-for="region in regionList" :key="region.region">
-          <li>{{ region.region }}</li>
+          <div class="list-item">{{ region.region }}</div>
         </div>
       </div>
-    </ul>
-    <div v-if="allCountriesName">
-      <div v-for="country in allCountriesName" :key="country.name">
-        <router-link v-bind:to="/citiesInThisCountry/ + country.code">
-          {{ country.name }}
-        </router-link>
+    </div>
+    <div class="main">
+      <div v-if="allCountriesName">
+        <div v-for="country in allCountriesName" :key="country.name">
+          <router-link v-bind:to="/citiesInThisCountry/ + country.code">
+            {{ country.name }}
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -27,15 +29,15 @@ export default {
     return {
       allCountriesName: null,
       regionList: null,
-      shoewRegion: false
+      showRegion: false
     };
   },
   methods: {
     show() {
-      if (this.shoewRegion) {
-        this.shoewRegion = false;
+      if (this.showRegion) {
+        this.showRegion = false;
       } else {
-        this.shoewRegion = true;
+        this.showRegion = true;
       }
     }
   },

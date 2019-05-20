@@ -1,3 +1,19 @@
-li {
-    list-style: none;
+.dropdown-list {
+    width: 200px;
+    background-color: rgb(162, 162, 230);
+}
+
+.list-item {
+    border: solid 1px white;
+    border-top: none;
+}
+
+.list-all {
+    border-top: solid 1px white;
+}
+
+.main {
+    position: absolute;
+    top: 150px;
+    left: 100px;
 }
