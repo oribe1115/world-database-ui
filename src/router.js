@@ -56,7 +56,7 @@ const router = new Router({
       component: Countries
     },
     {
-      path: "/:countryCode/cities",
+      path: "/cities/:countryCode",
       name: "Cities",
       component: Cities
     }

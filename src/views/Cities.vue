@@ -16,7 +16,7 @@ export default {
   },
   mounted() {
     const countryCoude = this.$route.params.countryCoude;
-    axios.get("api/" + countryCoude + "/cities").then(res => {
+    axios.get("/api/cities/" + countryCoude).then(res => {
       this.citiesName = res.data;
     });
   }
