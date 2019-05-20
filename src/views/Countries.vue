@@ -1,7 +1,10 @@
 <template>
   <div>
-    <ul v-for="region in regionList" :key="region.region">
-      <li>{{ region.region }}</li>
+    <ul>
+      <li>ALL</li>
+      <div v-for="region in regionList" :key="region.region">
+        <li>{{ region.region }}</li>
+      </div>
     </ul>
     <div v-if="allCountriesName">
       <div v-for="country in allCountriesName" :key="country.name">
@@ -34,3 +37,5 @@ export default {
   }
 };
 </script>
+
+<style src="./Countries.css"></style>
