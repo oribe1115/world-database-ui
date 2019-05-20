@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div v-if="citiesName">{{ citiesName }}</div>
+    <div v-if="allCites">
+      <div v-for="city in allCites" :key="city.Name">
+        <p>{{ city.Name }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,13 +15,13 @@ export default {
   name: "Cites",
   data() {
     return {
-      citiesName: null
+      allCites: null
     };
   },
   mounted() {
     const countryCoude = this.$route.params.countryCoude;
-    axios.get("/api/cities/" + countryCoude).then(res => {
-      this.citiesName = res.data;
+    axios.get("/api/citiesInThisCountry/" + countryCoude).then(res => {
+      this.allCites = res.data;
     });
   }
 };
