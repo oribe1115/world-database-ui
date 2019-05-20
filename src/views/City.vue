@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div v-if="cityInfo">{{ cityInfo }}</div>
-    <div v-else>街が見つかりませんでした</div>
+    <h1>{{ cityInfo.name }}</h1>
+    <div>Country Code: {{ cityInfo.countryCode }}</div>
+    <div>District: {{ cityInfo.district }}</div>
+    <div>Population: {{ cityInfo.population }}</div>
   </div>
 </template>
 
