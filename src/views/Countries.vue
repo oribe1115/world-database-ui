@@ -19,7 +19,7 @@ export default {
     };
   },
   mounted() {
-    axios.get("api/countries").then(res => {
+    axios.get("/api/countries").then(res => {
       this.allCountriesName = res.data;
     });
   }
