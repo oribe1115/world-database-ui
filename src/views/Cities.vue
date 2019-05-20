@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div>
-      <p>hoge</p>
-    </div>
     <div v-if="allCities">
       <div v-for="city in allCities" :key="city.id">
         <p>{{ city.name }}</p>
