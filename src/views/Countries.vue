@@ -1,13 +1,16 @@
 <template>
   <div>
     <div class="dropdown-list">
-      <div class="triangle" @click="changeShowRegionList()">
-        <div v-if="showRegionList">
-          <font-awesome-icon icon="caret-up" />
+      <div class="top-list" @click="changeShowRegionList()">
+        <div class="triangle">
+          <div v-if="showRegionList">
+            <font-awesome-icon icon="caret-up" />
+          </div>
+          <div v-else>
+            <font-awesome-icon icon="caret-down" />
+          </div>
         </div>
-        <div v-else>
-          <font-awesome-icon icon="caret-down" />
-        </div>
+        <div class="now-region">{{ region }}</div>
       </div>
       <div v-if="showRegionList">
         <div class="list-item list-all" @click="changeRegionToAll()">
@@ -44,7 +47,7 @@ export default {
       allCountriesName: null,
       regionList: null,
       showRegionList: false,
-      region: "all"
+      region: "ALL"
     };
   },
   methods: {
@@ -56,7 +59,7 @@ export default {
       }
     },
     judgeForShow(country) {
-      if (this.region == "all") {
+      if (this.region == "ALL") {
         return true;
       }
       if (country.region == this.region) {
@@ -66,7 +69,7 @@ export default {
       }
     },
     changeRegionToAll() {
-      this.region = "all";
+      this.region = "ALL";
     },
     changeShowRegion(region) {
       this.region = region.region;

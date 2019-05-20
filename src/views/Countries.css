@@ -3,6 +3,16 @@
     background-color: rgb(162, 162, 230);
 }
 
+.top-list {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 10px; 
+}
+
+.now-region {
+    margin-left: 20px;
+}
+
 .list-item {
     border: solid 1px white;
     border-top: none;
