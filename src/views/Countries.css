@@ -1,6 +1,7 @@
 .dropdown-list {
-    width: 200px;
+    width: 230px;
     background-color: rgb(162, 162, 230);
+    color: white;
 }
 
 .top-list {
@@ -11,6 +12,7 @@
 
 .now-region {
     margin-left: 20px;
+    font-size: 15px;
 }
 
 .list-item {
