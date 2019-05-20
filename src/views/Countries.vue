@@ -1,9 +1,11 @@
 <template>
   <div>
     <ul>
-      <li>ALL</li>
-      <div v-for="region in regionList" :key="region.region">
-        <li>{{ region.region }}</li>
+      <li @click="show">ALL</li>
+      <div v-if="showRegion">
+        <div v-for="region in regionList" :key="region.region">
+          <li>{{ region.region }}</li>
+        </div>
       </div>
     </ul>
     <div v-if="allCountriesName">
@@ -24,8 +26,18 @@ export default {
   data() {
     return {
       allCountriesName: null,
-      regionList: null
+      regionList: null,
+      shoewRegion: false
     };
+  },
+  methods: {
+    show() {
+      if (this.shoewRegion) {
+        this.shoewRegion = false;
+      } else {
+        this.shoewRegion = true;
+      }
+    }
   },
   mounted() {
     axios.get("/api/countries").then(res => {
