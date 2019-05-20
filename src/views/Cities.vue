@@ -4,8 +4,11 @@
       <p>hoge</p>
     </div>
     <div v-if="allCities">
-      {{ allCities }}
+      <div v-for="city in allCities" :key="city.id">
+        <p>{{ city.name }}</p>
+      </div>
     </div>
+    <div v-else>国が見つかりませんでした</div>
   </div>
 </template>
 
@@ -20,8 +23,8 @@ export default {
     };
   },
   mounted() {
-    const countryCoude = this.$route.params.countryCode;
-    axios.get("/api/citiesInThisCountry/" + countryCoude).then(res => {
+    const countryCode = this.$route.params.countryCode;
+    axios.get("/api/citiesInThisCountry/" + countryCode).then(res => {
       this.allCities = res.data;
     });
   }
