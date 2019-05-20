@@ -37,7 +37,7 @@ const router = new Router({
       }
     },
     {
-      path: "/city/:cityName",
+      path: "/city/:cityID",
       name: "City",
       component: City
     },

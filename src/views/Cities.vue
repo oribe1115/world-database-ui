@@ -2,7 +2,7 @@
   <div>
     <div v-if="allCities">
       <div v-for="city in allCities" :key="city.id">
-        <router-link v-bind:to="/cities/ + city.name">
+        <router-link v-bind:to="/city/ + city.id">
           {{ city.name }}
         </router-link>
       </div>

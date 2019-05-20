@@ -15,8 +15,8 @@ export default {
     };
   },
   mounted() {
-    const cityName = this.$route.params.cityName;
-    axios.get("/api/cities/" + cityName).then(res => {
+    const cityID = this.$route.params.cityID;
+    axios.get("/api/cities/" + cityID).then(res => {
       this.cityInfo = res.data;
     });
   }
