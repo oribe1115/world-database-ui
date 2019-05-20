@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="dropdown-list">
-      <div class="list-item list-all" @click="changeShowRegionList()">ALL</div>
+      <div
+        class="list-item list-all"
+        @click="changeShowRegionList(), changeRegionToAll()"
+      >
+        ALL
+      </div>
       <div v-if="showRegionList">
         <div v-for="region in regionList" :key="region.region">
           <div class="list-item" @click="changeShowRegion(region)">
@@ -54,6 +59,9 @@ export default {
       } else {
         return false;
       }
+    },
+    changeRegionToAll() {
+      this.region = "all";
     },
     changeShowRegion(region) {
       this.region = region.region;
